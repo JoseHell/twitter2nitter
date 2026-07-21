@@ -4,7 +4,9 @@
 
 chrome.webNavigation.onBeforeNavigate.addListener(async (details) => {
     const url = new URL(details.url);
-    if (url.hostname === 'twitter.com' || url.hostname === 'x.com') {
+    if (url.hostname === 'twitter.com' || url.hostname === 'x.com' ||
+        url.hostname === 'xcancel.com')
+    {
         const newUrl = 'https://nitter.net' + url.pathname + url.search + url.hash;
         await chrome.tabs.update(details.tabId, { url: newUrl });
     }

@@ -6,7 +6,8 @@
 	"permissions": [
 		"webNavigation",
 		"*://twitter.com/*",
-		"*://x.com/*"
+		"*://x.com/*",
+		"*://xcancel.com/*"
 	],
 	"background": {
 		"scripts": ["background.js"],
