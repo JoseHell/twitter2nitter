@@ -5,7 +5,7 @@
 	"description": "Redirects Twitter to Nitter for a private, ad-free experience.",
     "browser_specific_settings": {
         "gecko": {
-            "id": "twitter2nitter@a-catgirl.dev",
+            "id": "{ca538717-fda3-4898-8dea-793e714903f2}",
             "data_collection_permissions": {
                 "required": [
                     "none"
