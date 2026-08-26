@@ -6,9 +6,9 @@ const instanceInput = document.getElementById("instance-input");
 const saveButton = document.getElementById("save")
 
 async function set() {
-    console.log(instanceInput.value);
+    let instance = instanceInput.value.replace(/^https?:\/\//, "");
     await browser.storage.sync.set(
-        { instance: instanceInput.value }
+        { instance: instance }
     );
 }
 
