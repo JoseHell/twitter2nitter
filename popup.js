@@ -27,7 +27,12 @@ saveButton.addEventListener("click", async() => {
 });
 
 (async() => {
-    const instance = await browser.storage.sync.get("instance");
-    instanceInput.value = instance.instance;
+    const sync = await browser.storage.sync.get("instance");
+    let instance = sync.instance;
+    if (instance == undefined || instance == "") {
+        await browser.storage.sync.set({ instance: "nitter.net" });
+        instance = "nitter.net";
+    }
+    instanceInput.value = instance;
 })();
 
