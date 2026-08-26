@@ -26,3 +26,8 @@ saveButton.addEventListener("click", async() => {
     }
 });
 
+(async() => {
+    const instance = await browser.storage.sync.get("instance");
+    instanceInput.value = instance.instance;
+})();
+
