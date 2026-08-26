@@ -17,10 +17,15 @@
 	"permissions": [
 		"webNavigation",
 		"*://twitter.com/*",
-		"*://x.com/*"
+		"*://x.com/*",
+        "storage"
 	],
 	"background": {
 		"scripts": ["background.js"],
 		"persistent": false
-	}
+	},
+    "browser_action": {
+        "browser_style": false,
+        "default_popup": "popup.html"
+    }
 }

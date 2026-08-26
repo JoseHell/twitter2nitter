@@ -1,0 +1,102 @@
+/*
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:root {
+    --ctp-rosewater: #f5e0dc;
+    --ctp-pink: #f5c2e7;
+    --ctp-red: #f38ba8;
+    --ctp-sapphire: #74c7ec;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+}
+
+body {
+    background: var(--ctp-base);
+    color: var(--ctp-text);
+}
+
+#errors { font-family: monospace }
+
+input[type="password"],
+input[type="text"] {
+    padding: 10px;
+    color: var(--ctp-text);
+    background-color: var(--ctp-base);
+    border: 2px solid var(--ctp-surface0);
+
+    width: 300px;
+
+    transition: all 150ms ease-in;
+}
+
+input[type="password"]:hover,
+input[type="text"]:hover {
+    border-color: var(--ctp-surface1);
+}
+
+input[type="password"]:focus,
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--ctp-surface2);
+}
+
+@keyframes button-loading {
+    0% { background-position-x: 0% }
+    to { background-position-x: 200% }
+}
+
+button {
+    background: var(--ctp-mantle);
+    border: 2px solid var(--ctp-surface0);
+    padding: 10px 20px;
+    outline: none;
+    color: var(--ctp-text);
+    position: relative;
+    transition: color .5s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+button:before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    transform: scale(-1);
+    animation: button-loading 2s ease infinite;
+    background: repeat linear-gradient(90deg, transparent 0%, transparent 50%, var(--ctp-text) 50%, var(--ctp-text) 100%);
+    background-size: 200%;
+    transition: .5s ease;
+    opacity: 0;
+}
+
+button.loading {
+    color: var(--ctp-overlay1);
+    pointer-events: none
+}
+button.loading:before {
+    opacity: .2;
+}
+
+button.error {
+    color: var(--ctp-pink);
+    background: rgba(243, 139, 168,.16);
+    pointer-events: none;
+}
+
+
